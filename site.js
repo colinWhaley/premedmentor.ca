@@ -210,8 +210,15 @@ function initAuthorLinks() {
   });
 }
 
+/* ---------- Book cover: tap to turn on touch screens ---------- */
+function initBook() {
+  const wrap = document.querySelector('.book-wrap');
+  if (wrap) wrap.addEventListener('click', () => wrap.classList.toggle('turned'));
+}
+
 renderHeader();
 renderFooter();
 cookieBanner();
 initForms();
 initAuthorLinks();
+initBook();
