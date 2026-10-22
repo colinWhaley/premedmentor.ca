@@ -3,8 +3,9 @@
  *
  * Setup (signed in as premedmentorbook@gmail.com):
  *  1. Create a Google Sheet named "Premed Mentor — Submissions".
- *  2. Extensions > Apps Script. Replace Code.gs with this file and save.
+ *  2. Extensions > Apps Script (or a standalone project at script.google.com). Replace Code.gs with this file and save.
  *  3. Project Settings > Script Properties, add:
+ *       SHEET_ID               (needed for a standalone project) the ID from the sheet's URL
  *       FORM_SECRET            (optional) same value as FORM_SECRET in Cloudflare
  *       NOTIFY_EMAIL           (optional) where contact messages go; defaults to the script owner
  *       EMAILOCTOPUS_API_KEY   (optional) EmailOctopus API key
@@ -70,7 +71,8 @@ function reply(obj) {
 }
 
 function append(kind, row) {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const id = PropertiesService.getScriptProperties().getProperty('SHEET_ID');
+  const ss = id ? SpreadsheetApp.openById(id) : SpreadsheetApp.getActiveSpreadsheet();
   const name = { contact: 'Contact', access: 'Password requests', newsletter: 'Newsletter' }[kind];
   let sheet = ss.getSheetByName(name);
   if (!sheet) {
