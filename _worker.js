@@ -161,7 +161,7 @@ function gatePage({ error = false, soon = false }) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=202610220917">
+<link rel="stylesheet" href="/style.css?v=202610220925">
 </head>
 <body>
 <div id="site-header"></div>
@@ -174,7 +174,7 @@ function gatePage({ error = false, soon = false }) {
   </div>
 </main>
 <div id="site-footer"></div>
-<script src="/site.js?v=202610220917"></script>
+<script src="/site.js?v=202610220925"></script>
 </body>
 </html>`;
   return new Response(html, {

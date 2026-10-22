@@ -88,6 +88,8 @@ section h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
 .card h3 { font-size: 1.2rem; margin-top: 6px; }
 .card p { margin: 0; color: var(--ink-soft); font-size: .98rem; }
 
+.cover-note { text-align: center; color: var(--ink-soft); font-size: .8rem; font-style: italic; margin: 4px 0 0; }
+
 /* Key topics */
 .topics { columns: 2; column-gap: 48px; margin: 0; padding: 0; list-style: none; }
 .topics li { break-inside: avoid; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 1.02rem; }
