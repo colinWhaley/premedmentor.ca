@@ -78,7 +78,7 @@ function renderFooter() {
     <div class="cols">
       <div>
         <a class="brand" href="/">Premed<span>Mentor</span></a>
-        <p style="margin:10px 0 0;max-width:30em">A practical guide for students on the path to medical school in Canada, by Colin Whaley and Liam Taylor Ralph. Coming spring 2027 from <a href="https://brusheducation.ca/" target="_blank" rel="noopener" style="text-decoration:underline">Brush Education</a>.</p>
+        <p style="margin:10px 0 0;max-width:30em">A 100% Canadian guide, built for Canadian premeds, by Colin Whaley and Liam Taylor Ralph. Coming spring 2027 from <a href="https://brusheducation.ca/" target="_blank" rel="noopener" style="text-decoration:underline">Brush Education</a>.</p>
         <div class="social">
           ${iconLink('instagram', s.instagram, 'Instagram')}
           ${iconLink('x', s.x, 'X (Twitter)')}
