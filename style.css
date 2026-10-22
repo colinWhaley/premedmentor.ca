@@ -79,6 +79,15 @@ section h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
 .card h3 { font-size: 1.2rem; margin-top: 6px; }
 .card p { margin: 0; color: var(--ink-soft); font-size: .98rem; }
 
+/* Table of contents */
+.toc { columns: 2; column-gap: 48px; }
+.toc-part { break-inside: avoid; margin-bottom: 32px; }
+.toc-part h3 { font-size: 1.15rem; margin-bottom: .6em; padding-bottom: .4em; border-bottom: 1px solid var(--line); }
+.toc-part ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.toc-part li { color: var(--ink); font-size: .98rem; line-height: 1.45; }
+.toc-part .by { display: block; color: var(--ink-soft); font-size: .85rem; font-style: italic; }
+@media (max-width: 860px) { .toc { columns: 1; } }
+
 /* Store buttons */
 .stores { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .store { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 120px; padding: 20px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; text-decoration: none; color: var(--ink); font-weight: 600; font-size: .95rem; transition: transform .15s, box-shadow .15s, border-color .15s; }
