@@ -28,6 +28,10 @@ export default {
     if (path === '/extras' || path.startsWith('/extras.') || path.startsWith('/extras/')) {
       return handleReader(request, env, url);
     }
+    if (path.startsWith('/resources/')) {
+      // Category pages (/resources/mcat etc.) are the same page; resources.html picks the filter from the URL
+      return env.ASSETS.fetch(new Request(new URL('/resources', url), request));
+    }
     if (HIDDEN.has(path)) return new Response('Not found', { status: 404 });
     return env.ASSETS.fetch(request);
   },
@@ -161,7 +165,7 @@ function gatePage({ error = false, soon = false }) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=202610220955">
+<link rel="stylesheet" href="/style.css?v=202610221005">
 </head>
 <body>
 <div id="site-header"></div>
@@ -174,7 +178,7 @@ function gatePage({ error = false, soon = false }) {
   </div>
 </main>
 <div id="site-footer"></div>
-<script src="/site.js?v=202610220955"></script>
+<script src="/site.js?v=202610221005"></script>
 </body>
 </html>`;
   return new Response(html, {

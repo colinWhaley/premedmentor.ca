@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=202610220955">
+<link rel="stylesheet" href="/style.css?v=202610221005">
 </head>
 <body>
 <div id="site-header"></div>
@@ -45,7 +45,7 @@
 </main>
 
 <div id="site-footer"></div>
-<script src="/site.js?v=202610220955"></script>
+<script src="/site.js?v=202610221005"></script>
 <script>
 (async function () {
   const list = document.getElementById('res-list');
@@ -62,9 +62,17 @@
   // category may be a single label or a list of labels
   items.forEach((r) => { r.cats = [].concat(r.category || []); });
   const cats = ['All', ...new Set(items.flatMap((r) => r.cats))];
-  let active = 'All';
+  // Each category has its own URL, e.g. /resources/mcat or /resources/standard-interviews
+  const slug = (c) => c.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const hrefFor = (c) => (c === 'All' ? '/resources' : '/resources/' + slug(c));
+  const fromPath = () => {
+    const s = location.pathname.replace(/^\/resources\/?/, '').replace(/\/$/, '');
+    return cats.find((c) => c !== 'All' && slug(c) === s) || 'All';
+  };
+  let active = fromPath();
   function draw() {
-    filters.innerHTML = cats.map((c) => `<button class="chip" aria-pressed="${c === active}" data-cat="${esc(c)}">${esc(c)}</button>`).join('');
+    filters.innerHTML = cats.map((c) => `<a class="chip" href="${hrefFor(c)}" aria-pressed="${c === active}" data-cat="${esc(c)}">${esc(c)}</a>`).join('');
+    document.title = (active === 'All' ? 'Free Resources' : active + ' Resources') + ' — Premed Mentor';
     const shown = items.filter((r) => active === 'All' || r.cats.includes(active));
     list.innerHTML = shown.map((r) => `
       <article class="res">
@@ -80,10 +88,13 @@
   }
   filters.addEventListener('click', (e) => {
     const b = e.target.closest('[data-cat]');
-    if (!b) return;
+    if (!b || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
     active = b.dataset.cat;
+    history.pushState(null, '', hrefFor(active));
     draw();
   });
+  window.addEventListener('popstate', () => { active = fromPath(); draw(); });
   draw();
 })();
 </script>

@@ -135,6 +135,7 @@ img.avatar { object-fit: cover; display: block; }
   width: 100%; padding: 12px 14px; border: 1px solid #e3c9a6; border-radius: 10px; font: inherit; background: #fff; color: var(--ink);
 }
 .form textarea { min-height: 160px; resize: vertical; }
+.form select { appearance: none; -webkit-appearance: none; padding-right: 44px; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%278%27 viewBox=%270 0 12 8%27%3E%3Cpath d=%27M1 1.5l5 5 5-5%27 fill=%27none%27 stroke=%27%235a2610%27 stroke-width=%271.8%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; background-size: 12px 8px; }
 .form input:focus, .form select:focus, .form textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
 .check { display: flex; gap: 10px; align-items: flex-start; font-size: .92rem; color: var(--ink-soft); }
 .check input { margin-top: 4px; width: 18px; height: 18px; flex: none; }
