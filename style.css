@@ -133,14 +133,15 @@ section h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
 .res-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .res { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 8px; }
 .res .meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-.tag { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); background: var(--paper); border: 1px solid var(--line); padding: 3px 9px; border-radius: 999px; }
-.tag.aff { color: #8a5a00; background: #fff6e0; border-color: #f1dca6; }
+.tag { font-size: .85rem; color: var(--ink-soft); }
+.tag + .tag::before { content: "\00b7"; margin-right: 8px; }
+.tag.aff { color: #8a5a00; }
 .res h3 { font-size: 1.15rem; margin: 4px 0 0; }
 .res h3 a { color: var(--ink); text-decoration: none; }
 .res h3 a:hover { color: var(--accent); }
 .res p { margin: 0; color: var(--ink-soft); font-size: .96rem; }
 .res .go { margin-top: auto; padding-top: 8px; font-weight: 600; font-size: .92rem; }
-.disclosure-box { background: #fff6e0; border: 1px solid #f1dca6; border-radius: 12px; padding: 16px 20px; font-size: .93rem; color: #5c4300; margin-bottom: 28px; }
+.disclosure-box { border-top: 1px solid var(--line); padding-top: 20px; font-size: .9rem; color: var(--ink-soft); }
 
 /* Prose pages */
 .prose h2 { font-size: 1.6rem; margin-top: 2em; }

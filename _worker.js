@@ -168,7 +168,6 @@ function gatePage({ error = false, soon = false }) {
 <main>
   <div class="page-head" style="padding-bottom:72px">
     <div class="wrap narrow">
-      <div class="eyebrow">For Readers</div>
       <h1>Web Extras</h1>
       ${body}
     </div>
