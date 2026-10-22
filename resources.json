@@ -81,23 +81,23 @@
       "affiliate": false
     },
     {
-      "title": "Secondary application essay library (Med School HQ)",
+      "title": "Secondary application essay library (Med School HQ, US)",
       "url": "https://medicalschoolhq.net/medical-school-secondary-application-essay-library/",
       "category": [
         "Standard Interviews",
         "Essays"
       ],
-      "description": "A library of secondary application essay prompts, also useful for practising answers to common interview themes.",
+      "description": "An American resource: a library of essay prompts from US medical school secondary applications. Useful practice for written answers and common interview themes, but not specific to Canadian schools.",
       "affiliate": false
     },
     {
-      "title": "Secondary essay prompts database (Prospective Doctor)",
+      "title": "Secondary essay prompts database (Prospective Doctor, US)",
       "url": "https://www.prospectivedoctor.com/medical-school-secondary-essay-prompts-database/",
       "category": [
         "Standard Interviews",
         "Essays"
       ],
-      "description": "A database of secondary essay prompts, also useful for practising answers to common interview themes.",
+      "description": "An American resource: a database of essay prompts from US medical school secondary applications. Useful practice for written answers and common interview themes, but not specific to Canadian schools.",
       "affiliate": false
     },
     {
@@ -146,7 +146,10 @@
     {
       "title": "8BitDo Zero 2 Bluetooth controller (Anki remote)",
       "url": "https://www.amazon.ca/dp/B081HML6MP",
-      "category": "Recommended Products",
+      "category": [
+        "Study Tools",
+        "Recommended Products"
+      ],
       "description": "A tiny Bluetooth controller many students map to Anki shortcuts so they can review flashcards hands-free.",
       "affiliate": true
     }
