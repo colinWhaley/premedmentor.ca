@@ -1,5 +1,5 @@
 {
-  "_howto": "Add one object per resource. category is any short label (it becomes a filter; filters appear in the order categories first show up here). Optional: backup (a less prominent backup copy link), extra ({label, url} for a second link such as the creator's site). Set affiliate to true for any paid/affiliate link; it gets a visible label and rel=sponsored.",
+  "_howto": "Add one object per resource. category is a short label, or a list of labels to show a resource under several filters, (it becomes a filter; filters appear in the order categories first show up here). Optional: backup (a less prominent backup copy link), extra ({label, url} for a second link such as the creator's site). Set affiliate to true for any paid/affiliate link; it gets a visible label and rel=sponsored.",
   "resources": [
     {
       "title": "Admission Requirements of Canadian Faculties of Medicine",
@@ -33,7 +33,10 @@
       "title": "KRN Premed: Standard interview questions",
       "url": "https://drive.google.com/file/d/0B6Xt-tlSCG13RnJxM2xkLWxobFE/edit?usp=sharing",
       "backup": "https://drive.google.com/file/d/1Us7YMEmFhOgLKrmPZ6v2ABchdB6Kix63/view",
-      "extra": { "label": "Visit KRN Premed", "url": "https://krnpremed.blogspot.com/" },
+      "extra": {
+        "label": "Visit KRN Premed",
+        "url": "https://krnpremed.blogspot.com/"
+      },
       "category": "Standard Interviews",
       "description": "A collection of standard (panel-style) interview practice questions compiled by KRN Premed.",
       "affiliate": false
@@ -80,14 +83,20 @@
     {
       "title": "Secondary application essay library (Med School HQ)",
       "url": "https://medicalschoolhq.net/medical-school-secondary-application-essay-library/",
-      "category": "Standard Interviews",
+      "category": [
+        "Standard Interviews",
+        "Essays"
+      ],
       "description": "A library of secondary application essay prompts, also useful for practising answers to common interview themes.",
       "affiliate": false
     },
     {
       "title": "Secondary essay prompts database (Prospective Doctor)",
       "url": "https://www.prospectivedoctor.com/medical-school-secondary-essay-prompts-database/",
-      "category": "Standard Interviews",
+      "category": [
+        "Standard Interviews",
+        "Essays"
+      ],
       "description": "A database of secondary essay prompts, also useful for practising answers to common interview themes.",
       "affiliate": false
     },
@@ -95,7 +104,10 @@
       "title": "KRN Premed: MMI practice questions",
       "url": "https://drive.google.com/file/d/0B6Xt-tlSCG13ek1JZUZkcG5RMjg/edit?usp=sharing",
       "backup": "https://drive.google.com/file/d/1m4wcSNWkCYR7C1S4TAFugAqOnHNxWXSr/view",
-      "extra": { "label": "Visit KRN Premed", "url": "https://krnpremed.blogspot.com/" },
+      "extra": {
+        "label": "Visit KRN Premed",
+        "url": "https://krnpremed.blogspot.com/"
+      },
       "category": "MMI",
       "description": "A collection of multiple mini interview (MMI) practice scenarios compiled by KRN Premed.",
       "affiliate": false

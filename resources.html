@@ -59,14 +59,16 @@
     list.innerHTML = '<p>Sorry, the resource list could not be loaded. Please refresh the page.</p>';
     return;
   }
-  const cats = ['All', ...new Set(items.map((r) => r.category).filter(Boolean))];
+  // category may be a single label or a list of labels
+  items.forEach((r) => { r.cats = [].concat(r.category || []); });
+  const cats = ['All', ...new Set(items.flatMap((r) => r.cats))];
   let active = 'All';
   function draw() {
     filters.innerHTML = cats.map((c) => `<button class="chip" aria-pressed="${c === active}" data-cat="${esc(c)}">${esc(c)}</button>`).join('');
-    const shown = items.filter((r) => active === 'All' || r.category === active);
+    const shown = items.filter((r) => active === 'All' || r.cats.includes(active));
     list.innerHTML = shown.map((r) => `
       <article class="res">
-        <div class="meta"><span class="tag">${esc(r.category)}</span>${r.affiliate ? '<span class="tag aff">Affiliate link</span>' : ''}</div>
+        <div class="meta">${r.cats.map((c) => `<span class="tag">${esc(c)}</span>`).join('')}${r.affiliate ? '<span class="tag aff">Affiliate link</span>' : ''}</div>
         <h3><a href="${esc(r.url)}" target="_blank" rel="noopener${r.affiliate ? ' sponsored nofollow' : ''}">${esc(r.title)}</a></h3>
         <p>${esc(r.description)}</p>
         <div class="go">
