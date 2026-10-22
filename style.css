@@ -34,6 +34,10 @@ header.nav .wrap { display: flex; align-items: center; justify-content: space-be
 nav.links { display: flex; align-items: center; gap: 22px; }
 nav.links a { color: var(--ink-soft); text-decoration: none; font-weight: 500; font-size: .95rem; }
 nav.links a:hover, nav.links a[aria-current="page"] { color: var(--accent); }
+nav.links a.btn, nav.links a.btn:hover { color: #fff; }
+nav.links a.nav-callout { background: var(--ink); }
+nav.links a.nav-callout:hover { background: #23345e; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font: inherit; color: var(--ink); cursor: pointer; }
 
 /* Buttons */
@@ -79,14 +83,10 @@ section h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
 .card h3 { font-size: 1.2rem; margin-top: 6px; }
 .card p { margin: 0; color: var(--ink-soft); font-size: .98rem; }
 
-/* Table of contents */
-.toc { columns: 2; column-gap: 48px; }
-.toc-part { break-inside: avoid; margin-bottom: 32px; }
-.toc-part h3 { font-size: 1.15rem; margin-bottom: .6em; padding-bottom: .4em; border-bottom: 1px solid var(--line); }
-.toc-part ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-.toc-part li { color: var(--ink); font-size: .98rem; line-height: 1.45; }
-.toc-part .by { display: block; color: var(--ink-soft); font-size: .85rem; font-style: italic; }
-@media (max-width: 860px) { .toc { columns: 1; } }
+/* Key topics */
+.topics { columns: 2; column-gap: 48px; margin: 0; padding: 0; list-style: none; }
+.topics li { break-inside: avoid; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 1.02rem; }
+@media (max-width: 860px) { .topics { columns: 1; } }
 
 /* Store buttons */
 .stores { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -110,6 +110,7 @@ img.avatar { object-fit: cover; display: block; }
 .chip svg { width: 16px; height: 16px; fill: currentColor; }
 
 /* Forms */
+.caveat { background: #fff6e0; border: 1px solid #f1dca6; border-radius: 10px; padding: 14px 16px; font-size: .92rem; color: #5c4300; }
 .form { display: grid; gap: 18px; }
 .form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .form label { display: block; font-weight: 600; font-size: .92rem; margin-bottom: 6px; }
