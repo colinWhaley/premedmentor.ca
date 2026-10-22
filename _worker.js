@@ -1,10 +1,10 @@
 // Cloudflare Pages "advanced mode" worker. Runs in front of every request.
 //  - POST /api/form  -> validates form submissions and forwards them to Google Apps Script
-//  - /reader         -> password gate for the reader resources page
+//  - /extras         -> password gate for the Web Extras page
 //  - everything else -> static files
 //
 // Environment variables (Cloudflare dashboard > Pages project > Settings > Variables and Secrets):
-//  READER_PASSWORD  the shared reader password (also emailed to people who request it)
+//  READER_PASSWORD  the shared Web Extras password (also emailed to people who request it)
 //  APPS_SCRIPT_URL  the Google Apps Script web app URL (see apps-script.gs)
 //  FORM_SECRET      optional shared secret, must match FORM_SECRET in the Apps Script
 
@@ -23,6 +23,9 @@ export default {
       return handleForm(request, env);
     }
     if (path === '/reader' || path.startsWith('/reader.') || path.startsWith('/reader/')) {
+      return Response.redirect(new URL('/extras', url).toString(), 301); // old name for Web Extras
+    }
+    if (path === '/extras' || path.startsWith('/extras.') || path.startsWith('/extras/')) {
       return handleReader(request, env, url);
     }
     if (HIDDEN.has(path)) return new Response('Not found', { status: 404 });
@@ -98,7 +101,7 @@ async function handleForm(request, env) {
   }
 }
 
-/* ---------------- Reader gate ---------------- */
+/* ---------------- Web Extras gate ---------------- */
 async function handleReader(request, env, url) {
   const password = env.READER_PASSWORD;
   if (!password) return gatePage({ soon: true });
@@ -116,7 +119,7 @@ async function handleReader(request, env, url) {
       return new Response(null, {
         status: 303,
         headers: {
-          Location: '/reader',
+          Location: '/extras',
           'Set-Cookie': `${COOKIE}=${token}; Path=/; Max-Age=31536000; HttpOnly; Secure; SameSite=Lax`,
         },
       });
@@ -126,7 +129,7 @@ async function handleReader(request, env, url) {
   }
 
   if (cookies[COOKIE] === token) {
-    const res = await env.ASSETS.fetch(new Request(new URL('/reader', url), request));
+    const res = await env.ASSETS.fetch(new Request(new URL('/extras', url), request));
     const out = new Response(res.body, res);
     out.headers.set('Cache-Control', 'private, no-store');
     out.headers.set('X-Robots-Tag', 'noindex, nofollow');
@@ -137,11 +140,11 @@ async function handleReader(request, env, url) {
 
 function gatePage({ error = false, soon = false }) {
   const body = soon
-    ? `<p class="lead">Reader resources are coming soon. Check back shortly.</p>`
-    : `<p class="lead">Enter the reader password to view the resources that accompany the book.</p>
-      <form class="form form-card" method="post" action="/reader" style="margin-top:28px">
+    ? `<p class="lead">Web Extras are coming soon. Check back shortly.</p>`
+    : `<p class="lead">Enter the Web Extras password to view the resources that accompany the book.</p>
+      <form class="form form-card" method="post" action="/extras" style="margin-top:28px">
         <div>
-          <label for="pw">Reader password</label>
+          <label for="pw">Web Extras password</label>
           <input type="password" id="pw" name="password" required autocomplete="current-password" autofocus>
         </div>
         ${error ? '<div class="status show err" role="alert">That password didn\'t work. Check for typos and try again.</div>' : ''}
@@ -154,7 +157,7 @@ function gatePage({ error = false, soon = false }) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Reader Resources — Premed Mentor</title>
+<title>Web Extras — Premed Mentor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -166,7 +169,7 @@ function gatePage({ error = false, soon = false }) {
   <div class="page-head" style="padding-bottom:72px">
     <div class="wrap narrow">
       <div class="eyebrow">For Readers</div>
-      <h1>Reader resources</h1>
+      <h1>Web Extras</h1>
       ${body}
     </div>
   </div>

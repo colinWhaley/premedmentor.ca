@@ -30,6 +30,7 @@ const TOPICS = {
   suggest: 'Suggest a resource or product',
   media: 'Media or press',
   bulk: 'Bulk or group book orders',
+  privacy: 'Privacy or data request',
   other: 'Something else',
 };
 
@@ -101,13 +102,13 @@ function sendPassword(d) {
   MailApp.sendEmail({
     to: d.email,
     name: 'Premed Mentor',
-    subject: 'Your Premed Mentor reader password',
-    body: `Hi ${d.name},\n\nThanks for reading Premed Mentor! Here's the password for the reader resources:\n\n${d.readerPassword}\n\nUse it at https://premedmentor.ca/reader. Save this email so you can find it again.\n\nPlease don't share the password publicly.\n\nColin & Liam\nPremed Mentor\n\nYou're receiving this one-time email because you requested the reader password at premedmentor.ca.`,
-    htmlBody: `<p>Hi ${esc(d.name)},</p><p>Thanks for reading <em>Premed Mentor</em>! Here's the password for the reader resources:</p>
+    subject: 'Your Premed Mentor Web Extras password',
+    body: `Hi ${d.name},\n\nThanks for reading Premed Mentor! Here's the password for the Web Extras:\n\n${d.readerPassword}\n\nUse it at https://premedmentor.ca/extras. Save this email so you can find it again.\n\nPlease don't share the password publicly.\n\nColin & Liam\nPremed Mentor\n\nYou're receiving this one-time email because you requested the Web Extras password at premedmentor.ca.`,
+    htmlBody: `<p>Hi ${esc(d.name)},</p><p>Thanks for reading <em>Premed Mentor</em>! Here's the password for the Web Extras:</p>
       <p style="font-size:20px;font-weight:bold;letter-spacing:1px;background:#fbf8f3;border:1px solid #e6dfd3;padding:12px 16px;display:inline-block">${pw}</p>
-      <p><a href="https://premedmentor.ca/reader">Open the reader resources</a>. Save this email so you can find the password again.</p>
+      <p><a href="https://premedmentor.ca/extras">Open the Web Extras</a>. Save this email so you can find the password again.</p>
       <p>Please don't share the password publicly.</p><p>Colin &amp; Liam<br>Premed Mentor</p>
-      <p style="color:#777;font-size:12px">You're receiving this one-time email because you requested the reader password at premedmentor.ca.</p>`,
+      <p style="color:#777;font-size:12px">You're receiving this one-time email because you requested the Web Extras password at premedmentor.ca.</p>`,
   });
 }
 

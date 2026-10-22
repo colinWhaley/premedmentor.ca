@@ -88,7 +88,7 @@ section h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
 .avatar { width: 120px; height: 120px; border-radius: 50%; background: var(--line); display: grid; place-items: center; font-family: Fraunces, serif; font-size: 2.2rem; color: var(--ink-soft); }
 .author-card h3 { font-size: 1.5rem; margin-bottom: .2em; }
 .author-card .role { color: var(--accent); font-weight: 600; font-size: .9rem; margin-bottom: 12px; }
-.author-card p { color: var(--ink-soft); }
+.author-card p { color: var(--ink-soft); margin: 0 0 12px; }
 .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
 .chip { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); text-decoration: none; font-size: .9rem; font-weight: 500; cursor: pointer; font-family: inherit; }
 .chip:hover, .chip[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
