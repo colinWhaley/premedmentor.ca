@@ -56,8 +56,9 @@ function renderHeader() {
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="/">Premed<span>Mentor</span></a>
-    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
-    <nav class="links" id="nav-links">${links}<a href="/#newsletter">Get Updates</a><a class="btn small nav-callout" href="https://mdnavigator.ca/" target="_blank" rel="noopener">MD Navigator <span aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></a></nav>
+    <nav class="links" id="nav-links">${links}<a href="/#newsletter">Get Updates</a></nav>
+    <a class="btn small nav-callout" href="https://mdnavigator.ca/" target="_blank" rel="noopener">MD Navigator <span aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
   </div>
 </header>`;
   const btn = document.querySelector('.menu-btn');
@@ -189,10 +190,10 @@ function initForms() {
   const topic = new URLSearchParams(location.search).get('topic');
   const sel = document.querySelector('select[name=topic]');
   if (topic && sel && [...sel.options].some((o) => o.value === topic)) sel.value = topic;
-  // Show the "Discuss my situation" caveat only for that topic.
-  const note = document.getElementById('situation-note');
+  // Show the reply caveat only for general inquiries.
+  const note = document.getElementById('general-note');
   if (sel && note) {
-    const sync = () => { note.hidden = sel.value !== 'situation'; };
+    const sync = () => { note.hidden = sel.value !== 'general'; };
     sel.addEventListener('change', sync);
     sync();
   }

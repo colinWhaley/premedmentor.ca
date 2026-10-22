@@ -26,6 +26,7 @@ const CONSENT_TEXT = 'Opted in to receive emails from Premed Mentor via an untic
 
 const TOPICS = {
   speaking: 'Speaking or event request',
+  general: 'General inquiry',
   situation: 'Discuss my situation',
   suggest: 'Suggest a resource or product',
   media: 'Media or press',

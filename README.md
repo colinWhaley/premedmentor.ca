@@ -27,4 +27,5 @@ Redeploy after changing variables (Deployments > latest > Retry deployment).
 
 - Real cover image, store product links, social/author links (in `site.js`), Amazon Associates tag on affiliate links.
 - Google Analytics measurement ID in `site.js`.
+- When you change `style.css` or `site.js`, bump the `?v=` number on their links in every page and `_worker.js` (Cloudflare tells browsers to cache them for 4 hours).
 - Real Web Extras links in `extras.html` (keep this repo **private** so they stay hidden).

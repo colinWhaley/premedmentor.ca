@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/style.css?v=202610220857">
 </head>
 <body>
 <div id="site-header"></div>
@@ -17,7 +17,7 @@
   <div class="page-head">
     <div class="wrap narrow">
       <h1>Contact us</h1>
-      <p class="lead">Speaking requests, questions about your situation, resource suggestions, media enquiries: one form for all of it.</p>
+      <p class="lead">General questions, speaking requests, resource suggestions, media enquiries: one form for all of it.</p>
     </div>
   </div>
 
@@ -32,8 +32,8 @@
           <div>
             <label for="c-topic">What's this about?</label>
             <select id="c-topic" name="topic" required>
+              <option value="general" selected>General inquiry</option>
               <option value="speaking">Speaking or event request</option>
-              <option value="situation">Discuss my situation</option>
               <option value="suggest">Suggest a resource or product</option>
               <option value="media">Media or press</option>
               <option value="bulk">Bulk or group book orders</option>
@@ -43,8 +43,8 @@
           </div>
           <div><label for="c-org">Organization or school <span class="opt">(optional)</span></label><input type="text" id="c-org" name="organization" maxlength="200" autocomplete="organization"></div>
         </div>
-        <div class="caveat" id="situation-note" hidden>
-          <strong>Before you write about your situation:</strong> we read every message, but we can&rsquo;t promise to respond to each one. Where it helps, we may point you to the relevant chapters of the book rather than reply in detail. Any reply is general guidance based on our own experience, not official admissions, academic, legal or medical advice; for official information, please check directly with the medical schools you&rsquo;re applying to.
+        <div class="caveat" id="general-note">
+          <strong>Please note:</strong> we read every message, but we can&rsquo;t promise to respond to each one. Where it helps, we may point you to the relevant chapters of the book rather than reply in detail. Any reply is general guidance based on our own experience, not official admissions, academic, legal or medical advice; for official information, please check directly with the medical schools you&rsquo;re applying to.
         </div>
         <div>
           <label for="c-msg">Message</label>
@@ -64,6 +64,6 @@
 </main>
 
 <div id="site-footer"></div>
-<script src="/site.js"></script>
+<script src="/site.js?v=202610220857"></script>
 </body>
 </html>
