@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact &amp; Speaking — Premed Mentor</title>
+<meta name="description" content="Contact the Premed Mentor authors about speaking requests, your situation, resource suggestions, media and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <div class="page-head">
+    <div class="wrap narrow">
+      <div class="eyebrow">Get in Touch</div>
+      <h1>Contact us</h1>
+      <p class="lead">Speaking requests, questions about your situation, resource suggestions, media enquiries: one form for all of it.</p>
+    </div>
+  </div>
+
+  <section style="padding-top:16px">
+    <div class="wrap narrow">
+      <form class="form form-card" data-form="contact" data-success="Thanks for reaching out! We'll get back to you as soon as we can.">
+        <div class="row">
+          <div><label for="c-name">Name</label><input type="text" id="c-name" name="name" required maxlength="120" autocomplete="name"></div>
+          <div><label for="c-email">Email</label><input type="email" id="c-email" name="email" required maxlength="200" autocomplete="email"></div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="c-topic">What's this about?</label>
+            <select id="c-topic" name="topic" required>
+              <option value="speaking">Speaking or event request</option>
+              <option value="situation">Discuss my situation</option>
+              <option value="suggest">Suggest a resource or product</option>
+              <option value="media">Media or press</option>
+              <option value="bulk">Bulk or group book orders</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div><label for="c-org">Organization or school <span class="opt">(optional)</span></label><input type="text" id="c-org" name="organization" maxlength="200" autocomplete="organization"></div>
+        </div>
+        <div>
+          <label for="c-msg">Message</label>
+          <textarea id="c-msg" name="message" required maxlength="5000" placeholder="For speaking requests, include the date, location (or virtual), audience and size. For resource suggestions, include a link."></textarea>
+        </div>
+        <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="check">
+          <input type="checkbox" id="c-nl" name="newsletter">
+          <label for="c-nl">Optional: also sign me up for the Premed Mentor newsletter. I can unsubscribe at any time.</label>
+        </div>
+        <p class="note-small" style="margin:0">We'll use your details only to reply to you (and send the newsletter if you opt in). See our <a href="/privacy">Privacy Policy</a>. We can't provide medical, legal or official admissions advice; see our <a href="/disclosures">disclaimer</a>.</p>
+        <div><button class="btn" type="submit">Send message</button></div>
+        <div class="status" role="status" aria-live="polite"></div>
+      </form>
+      <p class="note-small">Prefer email? Write to <a href="mailto:premedmentorbook@gmail.com">premedmentorbook@gmail.com</a>.</p>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "_howto": "Add one object per resource. category is any short label (it becomes a filter). Set affiliate to true for any paid/affiliate link; it gets a visible label and rel=sponsored.",
+  "resources": [
+    {
+      "title": "Admission Requirements of Canadian Faculties of Medicine",
+      "url": "https://www.afmc.ca/",
+      "category": "Applications",
+      "description": "The Association of Faculties of Medicine of Canada (AFMC) publishes a yearly guide comparing admission requirements across Canadian medical schools.",
+      "affiliate": false
+    },
+    {
+      "title": "OMSAS (Ontario Medical School Application Service)",
+      "url": "https://www.ouac.on.ca/omsas/",
+      "category": "Applications",
+      "description": "The official application service for Ontario's medical schools: dates, instructions and fees.",
+      "affiliate": false
+    },
+    {
+      "title": "Official MCAT information (AAMC)",
+      "url": "https://students-residents.aamc.org/taking-mcat-exam",
+      "category": "MCAT",
+      "description": "Test dates, registration, content outlines and official prep materials from the organization that runs the MCAT.",
+      "affiliate": false
+    },
+    {
+      "title": "Casper test information (Acuity Insights)",
+      "url": "https://acuityinsights.app/casper/",
+      "category": "Casper & Interviews",
+      "description": "Official information and practice for the Casper situational judgment test used by many Canadian schools.",
+      "affiliate": false
+    },
+    {
+      "title": "Anki",
+      "url": "https://apps.ankiweb.net/",
+      "category": "Study Tools",
+      "description": "Free spaced-repetition flashcard app widely used for MCAT and medical school studying.",
+      "affiliate": false
+    },
+    {
+      "title": "8BitDo Zero 2 Bluetooth controller (Anki remote)",
+      "url": "https://www.amazon.ca/dp/B081HML6MP",
+      "category": "Recommended Products",
+      "description": "A tiny Bluetooth controller many students map to Anki shortcuts so they can review flashcards hands-free.",
+      "affiliate": true
+    }
+  ]
+}

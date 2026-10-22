@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Resources — Premed Mentor</title>
+<meta name="description" content="A curated list of free resources for Canadian premed students: applications, MCAT, Casper, interviews, study tools and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Free for Everyone</div>
+      <h1>Free resources</h1>
+      <p class="lead">The best free tools, guides and official sources from around the web, gathered in one place for readers and the wider premed community.</p>
+    </div>
+  </div>
+
+  <section style="padding-top:24px">
+    <div class="wrap">
+      <div class="disclosure-box">
+        <strong>Affiliate disclosure:</strong> Some links on this page, marked <span class="tag aff">Affiliate link</span>, are affiliate links. If you buy through them, we may earn a small commission at no extra cost to you. As an Amazon Associate, we earn from qualifying purchases. We only list things we think are genuinely useful. <a href="/disclosures#affiliate">Full disclosure</a>.
+      </div>
+      <div class="filters" id="filters" aria-label="Filter by category"></div>
+      <div class="res-list" id="res-list"><p>Loading resources&hellip;</p></div>
+      <noscript><p>Please enable JavaScript to view the resource list.</p></noscript>
+
+      <div class="card" style="margin-top:48px;text-align:center">
+        <h3>Know a great resource or product?</h3>
+        <p>Suggest it and we'll take a look.</p>
+        <p style="margin-top:16px"><a class="btn small" href="/contact?topic=suggest">Suggest a resource</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="/site.js"></script>
+<script>
+(async function () {
+  const list = document.getElementById('res-list');
+  const filters = document.getElementById('filters');
+  const esc = (s) => String(s || '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  let items = [];
+  try {
+    const res = await fetch('/resources.json', { cache: 'no-cache' });
+    items = (await res.json()).resources || [];
+  } catch (e) {
+    list.innerHTML = '<p>Sorry, the resource list could not be loaded. Please refresh the page.</p>';
+    return;
+  }
+  const cats = ['All', ...new Set(items.map((r) => r.category).filter(Boolean))];
+  let active = 'All';
+  function draw() {
+    filters.innerHTML = cats.map((c) => `<button class="chip" aria-pressed="${c === active}" data-cat="${esc(c)}">${esc(c)}</button>`).join('');
+    const shown = items.filter((r) => active === 'All' || r.category === active);
+    list.innerHTML = shown.map((r) => `
+      <article class="res">
+        <div class="meta"><span class="tag">${esc(r.category)}</span>${r.affiliate ? '<span class="tag aff">Affiliate link</span>' : ''}</div>
+        <h3><a href="${esc(r.url)}" target="_blank" rel="noopener${r.affiliate ? ' sponsored nofollow' : ''}">${esc(r.title)}</a></h3>
+        <p>${esc(r.description)}</p>
+        <a class="go" href="${esc(r.url)}" target="_blank" rel="noopener${r.affiliate ? ' sponsored nofollow' : ''}">Visit &rarr;</a>
+      </article>`).join('') || '<p>No resources in this category yet.</p>';
+  }
+  filters.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-cat]');
+    if (!b) return;
+    active = b.dataset.cat;
+    draw();
+  });
+  draw();
+})();
+</script>
+</body>
+</html>
