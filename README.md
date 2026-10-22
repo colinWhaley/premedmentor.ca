@@ -1,6 +1,6 @@
 # premedmentor.ca
 
-Website for *Premed Mentor: The Comprehensive Guide to Canadian Medical Schools* by Colin Whaley and Liam Taylor Ralph.
+Website for *Premed Mentor: The Comprehensive Guide to Canadian Medical School Admissions* by Colin Whaley and Liam Taylor Ralph.
 
 Plain HTML/CSS/JS hosted on Cloudflare Pages (project `premedmentor`). Every push to `main` redeploys in about a minute. There's no build step.
 
