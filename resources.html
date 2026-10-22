@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=202610220925">
+<link rel="stylesheet" href="/style.css?v=202610220955">
 </head>
 <body>
 <div id="site-header"></div>
@@ -18,6 +18,7 @@
     <div class="wrap">
       <h1>Free resources</h1>
       <p class="lead">The best free tools, guides and official sources from around the web, gathered in one place for Canadian premeds, readers and the wider community. We prioritize official Canadian sources.</p>
+      <p class="note-small" style="margin-top:8px">We link to third-party resources for reference only. A link isn&rsquo;t an endorsement.</p>
     </div>
   </div>
 
@@ -44,7 +45,7 @@
 </main>
 
 <div id="site-footer"></div>
-<script src="/site.js?v=202610220925"></script>
+<script src="/site.js?v=202610220955"></script>
 <script>
 (async function () {
   const list = document.getElementById('res-list');
@@ -68,7 +69,11 @@
         <div class="meta"><span class="tag">${esc(r.category)}</span>${r.affiliate ? '<span class="tag aff">Affiliate link</span>' : ''}</div>
         <h3><a href="${esc(r.url)}" target="_blank" rel="noopener${r.affiliate ? ' sponsored nofollow' : ''}">${esc(r.title)}</a></h3>
         <p>${esc(r.description)}</p>
-        <a class="go" href="${esc(r.url)}" target="_blank" rel="noopener${r.affiliate ? ' sponsored nofollow' : ''}">Visit &rarr;</a>
+        <div class="go">
+          <a href="${esc(r.url)}" target="_blank" rel="noopener${r.affiliate ? ' sponsored nofollow' : ''}">Visit &rarr;</a>
+          ${r.extra ? `<a class="extra" href="${esc(r.extra.url)}" target="_blank" rel="noopener">${esc(r.extra.label)}</a>` : ''}
+          ${r.backup ? `<a class="backup" href="${esc(r.backup)}" target="_blank" rel="noopener">Backup copy</a>` : ''}
+        </div>
       </article>`).join('') || '<p>No resources in this category yet.</p>';
   }
   filters.addEventListener('click', (e) => {

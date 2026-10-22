@@ -1,5 +1,5 @@
 {
-  "_howto": "Add one object per resource. category is any short label (it becomes a filter). Set affiliate to true for any paid/affiliate link; it gets a visible label and rel=sponsored.",
+  "_howto": "Add one object per resource. category is any short label (it becomes a filter; filters appear in the order categories first show up here). Optional: backup (a less prominent backup copy link), extra ({label, url} for a second link such as the creator's site). Set affiliate to true for any paid/affiliate link; it gets a visible label and rel=sponsored.",
   "resources": [
     {
       "title": "Admission Requirements of Canadian Faculties of Medicine",
@@ -25,8 +25,103 @@
     {
       "title": "Casper test information (Acuity Insights)",
       "url": "https://acuityinsights.app/casper/",
-      "category": "Casper & Interviews",
+      "category": "Casper",
       "description": "Official information and practice for the Casper situational judgment test used by many Canadian schools.",
+      "affiliate": false
+    },
+    {
+      "title": "KRN Premed: Standard interview questions",
+      "url": "https://drive.google.com/file/d/0B6Xt-tlSCG13RnJxM2xkLWxobFE/edit?usp=sharing",
+      "backup": "https://drive.google.com/file/d/1Us7YMEmFhOgLKrmPZ6v2ABchdB6Kix63/view",
+      "extra": { "label": "Visit KRN Premed", "url": "https://krnpremed.blogspot.com/" },
+      "category": "Standard Interviews",
+      "description": "A collection of standard (panel-style) interview practice questions compiled by KRN Premed.",
+      "affiliate": false
+    },
+    {
+      "title": "University of Delaware sample interview questions",
+      "url": "https://drive.google.com/file/d/1KBzDF-wkUPrJSCT1d1QpBgyJS7gG9GIF/view",
+      "category": "Standard Interviews",
+      "description": "Sample medical school interview questions to practise with.",
+      "affiliate": false
+    },
+    {
+      "title": "Colorado: 100 interview questions",
+      "url": "https://www.medaholic.com/wp-content/uploads/2009/02/premed_interviewquestions.pdf",
+      "backup": "https://drive.google.com/file/d/1g7APdwDmpBBiBfp5vJsqSYWq0C9tMdno/view",
+      "category": "Standard Interviews",
+      "description": "A list of 100 common medical school interview questions.",
+      "affiliate": false
+    },
+    {
+      "title": "Cedarville University medical school interview handbook",
+      "url": "https://www.cedarville.edu/-/media/Files/PDF/Career/Medical-School-Interview-Questions.pdf",
+      "backup": "https://drive.google.com/file/d/1j93cBRQSmsrbRTm8v5cTXYtznL9Lx1zv/view?usp=sharing",
+      "category": "Standard Interviews",
+      "description": "An interview preparation handbook with common medical school interview questions.",
+      "affiliate": false
+    },
+    {
+      "title": "Medical school interview questions from students across Canada (2006)",
+      "url": "https://www.thestudentroom.co.uk/attachment.php?attachmentid=192443&d=1357932274",
+      "backup": "https://drive.google.com/file/d/1Gr3T467WBaqBY_6LmX82tMaXXuHjoI9c/view?usp=sharing",
+      "category": "Standard Interviews",
+      "description": "Interview questions contributed by students from universities across Canada. Older, but a useful sense of what Canadian schools have asked.",
+      "affiliate": false
+    },
+    {
+      "title": "Medical school interview questions (Cornell)",
+      "url": "https://www.ansc.purdue.edu/anscjobs/medical/questions.pdf",
+      "backup": "https://drive.google.com/file/d/1KaTcS0Ovr7_mhizW7ocK_fJycfYJBWyE/view?usp=sharing",
+      "category": "Standard Interviews",
+      "description": "A printable list of medical school interview practice questions.",
+      "affiliate": false
+    },
+    {
+      "title": "Secondary application essay library (Med School HQ)",
+      "url": "https://medicalschoolhq.net/medical-school-secondary-application-essay-library/",
+      "category": "Standard Interviews",
+      "description": "A library of secondary application essay prompts, also useful for practising answers to common interview themes.",
+      "affiliate": false
+    },
+    {
+      "title": "Secondary essay prompts database (Prospective Doctor)",
+      "url": "https://www.prospectivedoctor.com/medical-school-secondary-essay-prompts-database/",
+      "category": "Standard Interviews",
+      "description": "A database of secondary essay prompts, also useful for practising answers to common interview themes.",
+      "affiliate": false
+    },
+    {
+      "title": "KRN Premed: MMI practice questions",
+      "url": "https://drive.google.com/file/d/0B6Xt-tlSCG13ek1JZUZkcG5RMjg/edit?usp=sharing",
+      "backup": "https://drive.google.com/file/d/1m4wcSNWkCYR7C1S4TAFugAqOnHNxWXSr/view",
+      "extra": { "label": "Visit KRN Premed", "url": "https://krnpremed.blogspot.com/" },
+      "category": "MMI",
+      "description": "A collection of multiple mini interview (MMI) practice scenarios compiled by KRN Premed.",
+      "affiliate": false
+    },
+    {
+      "title": "University of Saskatchewan sample MMI scenarios",
+      "url": "https://medicine.usask.ca/documents/Admissions/MMI-Sample-Scenarios.pdf",
+      "backup": "https://drive.google.com/file/d/1R1yXzEn-4px65MNLip8VLA17PStBxHtG/view",
+      "category": "MMI",
+      "description": "Sample MMI scenarios published by the University of Saskatchewan College of Medicine.",
+      "affiliate": false
+    },
+    {
+      "title": "AcceptedTogether / FutureMe MD sample questions",
+      "url": "https://blog.acceptedtogether.com/medical-school-interview-questions/",
+      "backup": "https://drive.google.com/file/d/1kxGzMET9tFPDVJkBgydq57EKjOgQznhA/view?usp=sharing",
+      "category": "MMI",
+      "description": "Sample medical school interview and MMI-style questions.",
+      "affiliate": false
+    },
+    {
+      "title": "BeMo sample MMI questions",
+      "url": "https://bemoacademicconsulting.com/blog/sample-mmi-practice-questions",
+      "backup": "https://drive.google.com/file/d/1LI7HjimjrXRsKvKYZDtzL6kvCK7Sf9yO/view?usp=sharing",
+      "category": "MMI",
+      "description": "Sample MMI practice questions.",
       "affiliate": false
     },
     {
